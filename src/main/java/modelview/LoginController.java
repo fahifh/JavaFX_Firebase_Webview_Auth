@@ -34,7 +34,7 @@ public class LoginController {
             App.setRoot("AccessFBView.fxml");
 
         } catch (FirebaseAuthException fe) {
-            //System.err.println("Username incomplete ");
+            System.err.println("Username incomplete ");
             App.setRoot("AccessFBView.fxml");
         }
     }

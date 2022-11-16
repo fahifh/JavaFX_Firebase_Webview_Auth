@@ -24,6 +24,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.concurrent.Worker.State;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import netscape.javascript.JSObject;
 import org.w3c.dom.Document;
 
@@ -80,6 +81,7 @@ public class WebContainerController implements Initializable {
     @FXML
     WebView webView;
     private WebEngine webEngine;
+    private MenuItem menuItem_user;
 
     @FXML
     private void goAction(ActionEvent evt) {
@@ -136,6 +138,7 @@ public class WebContainerController implements Initializable {
         } catch (Exception ex) {
             Logger.getLogger(WebContainerController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        menuItem_user.setText(SignupController.currentUser.getDisplayName());
     }
     
         public class Bridge {
@@ -147,4 +150,3 @@ public class WebContainerController implements Initializable {
         }
     }
 }
-

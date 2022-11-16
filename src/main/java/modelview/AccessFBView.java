@@ -30,6 +30,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import models.Person;
@@ -40,6 +41,8 @@ public class AccessFBView {
      @FXML
     private TextField nameField;
     @FXML
+    public UserRecord currentUser;
+   
     private TextField majorField;
     @FXML
     private TextField ageField;
@@ -52,6 +55,7 @@ public class AccessFBView {
      private boolean key;
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private Person person;
+    public MenuItem menuItem_user;
     public ObservableList<Person> getListOfUsers() {
         return listOfUsers;
     }
@@ -62,6 +66,7 @@ public class AccessFBView {
         nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
         majorField.textProperty().bindBidirectional(accessDataViewModel.userMajorProperty());
         writeButton.disableProperty().bind(accessDataViewModel.isWritePossibleProperty().not());
+       
     }
 
     @FXML
